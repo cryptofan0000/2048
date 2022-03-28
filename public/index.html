@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>2048 by Leng</title>
+    <style>
+      html {
+        overflow: hidden;
+        width: 100%;
+        -ms-overflow-style: none;
+      }
+
+      body {
+        /* height: 100%; */
+        width: 100%;
+        position: fixed;
+        /* prevent overscroll bounce*/
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        /* iOS velocity scrolling */
+        overscroll-behavior-y: contain;
+        overscroll-behavior-x: contain;
+      }
+      body::-webkit-scrollbar {
+        overflow: hidden;
+      }
+      #root {
+        overflow: hidden;
+      }
+      /*.makeStyles-root-1 {
+        overflow: hidden;
+      }
+      .makeStyles-root-1 > div {
+        overflow: hidden;
+      }
+      div#boardroot:focus {
+        outline-style: none;
+      }
+      .MuiGrid-spacing-xs-2 > .MuiGrid-item {
+        padding: 1px !important;
+      }
+      .makeStyles-contained-3 {
+        position: absolute !important;
+        margin-top: 170px !important;
+        margin-right: 0px !important;
+        margin-left: calc((100% - 450px) / 2 + 330px) !important;
+      }
+      .makeStyles-root-7 {
+        margin-top: 70px;
+      }
+
+      @media screen and (max-width: 624.95px) {
+        .makeStyles-root-7 {
+          width: 75vw !important;
+          height: 75vw !important;
+        }
+        .makeStyles-contained-3 {
+          margin-left: calc(95% - 175px) !important;
+          margin-top: 165px !important;
+        }
+        h5 {
+          font-size: 0.5em;
+        }
+      }
+
+      @media screen and (max-width: 599.95px) {
+        .makeStyles-root-7 {
+          width: 75vw !important;
+          height: 75vw !important;
+        }
+        .makeStyles-contained-3 {
+          margin-left: calc(95% - 150px) !important;
+        }
+        h5 {
+          font-size: 0.5em;
+        }
+      }
+      @media screen and (max-height: 683px) {
+        .makeStyles-root-7 {
+          width: 50vh !important;
+          height: 50vh !important;
+        }
+        h5 {
+          font-size: 0.5em;
+        }
+      }
+      @media screen and (max-height: 683px) {
+        .MuiTypography-h3 {
+          font-size: 1.7rem !important;
+        }
+      }
+      @media screen and (max-height: 475px) {
+        .MuiTypography-h3 {
+          font-size: 1.5rem !important;
+        }
+        .makeStyles-contained-3 {
+          margin-top: 140px !important;
+        }
+        h5 {
+          font-size: 0.5em;
+        }
+      }
+      .makeStyles-containedHis-3, .makeStyles-containedLog-4 {
+        margin: 0px !important;
+      } 
+      .game-lobby-btn {
+        margin-top: 20px;
+        width: 80%;
+        text-align: center;
+      }
+      .fas {
+        color: #94786c !important;
+      }
+      a {
+        float: left;
+      }
+      .start-game-button {
+        border: none;
+        width: 100%;
+        background-color: #f5835f;
+        font-size: 20px;
+        padding: 7px;
+        color: white;
+        border-radius: 5px
+      }
+      .start-game-button:hover {
+        background-color: #fb8c00;
+      }
+      .high-score-button {
+        border: none;
+        width: 100%;
+        background-color: #8f7a65;
+        font-size: 20px;
+        padding: 7px;
+        color: white;
+        border-radius: 5px
+      }
+      .high-score-button:hover {
+        background-color: #dcb;
+      }
+      .MuiGrid-spacing-xs-2 {
+        margin: 0px !important;
+      }
+      .makeStyles-block-132 {
+        border-radius: 8px !important;
+      }
+      .header-grid {
+        display: flex;
+        justify: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      html {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+      }
+      .header-area {
+        display: flex;
+        justify-content: center;
+        flex-direction: column
+      }
+
+      .header-btn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        font-size: 40px;
+        background-color: #bcaaa4;
+        border-radius: 5px;
+      }
+      .header-btn>i {
+        color: white !important;
+      }
+      .MuiTypography-root {
+        color: #776666;
+      }*/
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
